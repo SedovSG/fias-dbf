@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/sedovsg/fias-dbf/v/stable)](https://packagist.org/packages/sedovsg/fias-dbf)
 [![License](https://poser.pugx.org/sedovsg/fias-dbf/license)](LICENSE)
 [![Build Status](https://travis-ci.org/SedovSG/fias-dbf.svg?branch=master)](https://travis-ci.org/SedovSG/fias-dbf)
-[![Codecov](https://codecov.io/gh/SedovSG/dbf-dbf/branch/master/graph/badge.svg)](https://codecov.io/gh/SedovSG/dbf-dbf)
+[![Codecov](https://codecov.io/gh/SedovSG/fias-dbf/branch/master/graph/badge.svg)](https://codecov.io/gh/SedovSG/fias-dbf)
 [![Total Downloads](https://poser.pugx.org/sedovsg/fias-dbf/downloads)](https://packagist.org/packages/sedovsg/fias-dbf)
 
 Библиотека для работы с базой данных DBF, получения и обновления данных в формате DBF от Федеральной информационной адресной системы Российской Федерации, которая проста в использовании.
