@@ -1,0 +1,39 @@
+dist: xenial
+
+sudo: required
+
+language: php
+
+branches:
+  only:
+    - master
+
+php:
+  - 7.1
+  - 7.2
+
+install:
+  - sudo mkdir ~/php7-dbase && sudo chmod -R 777 ~/php7-dbase
+  - git clone http://github.com/mote0230/dbase-pecl-php7.git ~/php7-dbase
+  - cd ~/php7-dbase/ && phpize && ./configure && make && sudo make install
+  - cd - && sudo rm -rf ~/php7-dbase
+  - echo "extension=dbase.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - pecl install rar
+  - echo "extension=rar.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source --dev
+  - composer install
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email: SedovSG@yandex.ru
+  on_success: never
+  on_failure: always
+

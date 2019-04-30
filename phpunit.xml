@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="./vendor/autoload.php"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="true">
+    <testsuites>
+        <testsuite name="Tests">
+            <directory suffix="Test.php" phpVersion="7.1.0">tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory suffix=".phtml">./src</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="./tests/log/coverage"
+            lowUpperBound="50" highLowerBound="80" />
+        <log type="testdox-html" target="./tests/log/testdox.html" />
+        <log type="coverage-clover" target="clover.xml" />
+    </logging>
+</phpunit>
